@@ -1,0 +1,96 @@
+html {
+    font-size: 16px
+}
+
+/*voy a usar mediasquery para hacer adaptable
+la letra de un dispositivo diferente*/
+
+@media screen and(max-width:400px) {
+    html {
+        font-size: p.411764905882353px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: rgb(253, 206, 255);
+    font-family: "Silkscreen";
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.882;
+    color: white;
+    margin: 0;
+    padding: 12;
+    text-shadow: 1.5px 1.5px 3px rgb(0, 0, 0);
+}
+
+/*Estilos a los links*/
+a {
+    color: rgb(248, 255, 183);
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover,
+/*Color*/
+a:focus,
+/*Brillo*/
+a:active
+
+/*Activacion*/
+    {
+    color: rgb(255, 197, 50);
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+/*Tipografia*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: rgb(220, 80, 255);
+    font-weight: 800;
+    font-style: normal;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    margin-top: 6rem;
+    margin-bottom: 1.6rem;
+}
+
+@media screen and (max-width:600px) {
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4 {
+        margin-top: 6rem;
+    }
+}
