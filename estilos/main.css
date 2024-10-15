@@ -1,15 +1,14 @@
 html {
-    font-size: 16px
+    font-size: 16px;
 }
 
-/*voy a usar mediasquery para hacer adaptable
-la letra de un dispositivo diferente*/
 
 @media screen and(max-width:400px) {
     html {
-        font-size: p.411764905882353px;
+        font-size: 9.41176px;
     }
 }
+
 
 html,
 body {
@@ -17,56 +16,63 @@ body {
 }
 
 body {
-    background: rgb(253, 206, 255);
-    font-family: "Silkscreen";
+    background: #000000f6;
+
+    font-family: "Silkscreen", ;
+
     font-size: 1.7rem;
     font-style: normal;
-    font-weight: 600;
+
+    font-weight: normal;
+
     line-height: 1.882;
-    color: white;
+    color: black;
+
     margin: 0;
-    padding: 12;
-    text-shadow: 1.5px 1.5px 3px rgb(0, 0, 0);
+
+    padding: 12px;
 }
 
 /*Estilos a los links*/
 a {
-    color: rgb(248, 255, 183);
-    transition: all 0.2s ease-in-out;
+    color: #cf1767;
+    transition: all 0.3s ease-in-out;
 }
 
+/*Transicion de estilos para los links*/
 a:hover,
-/*Color*/
+/*Le genera un pequeño brillo*/
 a:focus,
-/*Brillo*/
-a:active
-
-/*Activacion*/
-    {
-    color: rgb(255, 197, 50);
+/**/
+a:active {
+    color: white;
 }
+
 
 a:hover,
 a:active {
     outline: 0;
 }
 
-/*Tipografia*/
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
+h6 .h1,
 .h2,
 .h3,
 .h4,
 .h5,
 .h6 {
-    color: rgb(220, 80, 255);
+    font-family: "Silkscreen", serif;
     font-weight: 800;
     font-style: normal;
+    text-shadow: 1.2px 1.2px 2.5px white;
+    color: #ffffff;
+
+
 }
 
 h1,
@@ -77,11 +83,14 @@ h3,
 .h3,
 h4,
 .h4 {
+
     margin-top: 6rem;
-    margin-bottom: 1.6rem;
+
+    margin-bottom: 16rem;
 }
 
-@media screen and (max-width:600px) {
+
+@media screen and(max-width:600px) {
 
     h1,
     .h1,
@@ -91,6 +100,169 @@ h4,
     .h3,
     h4,
     .h4 {
+
         margin-top: 6rem;
     }
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+
+    margin-top: 4.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.s-header {
+    position: absolute;
+    /*De arriva para abajo*/
+    top: 2rem;
+    /*De derecha a la izquierda*/
+    right: 0;
+    /*De izquierda a la derecha*/
+    left: 0;
+    /*De abajo para arriva*/
+    bottom: 0;
+    width: 100%;
+    border: 1px solid white;
+    height: 78px;
+    text-align: center;
+}
+
+/*posicion en forma de fixed*/
+.s-header.sticky {
+    background: #050505;
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+}
+
+.header-logo {
+
+    display: inline-block;
+
+    margin: 6px 0 0 0;
+    position: absolute;
+
+    top: 50%;
+
+    left: 40px;
+}
+
+/*ingresamos una clase la cual me busqye la clase logo*/
+.header-logo a {
+
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    transition: all .3s;
+}
+
+.header-logo img {
+    width: 132px;
+    height: 36px;
+    margin: 0;
+}
+
+/*una clase con contenedores de forma de bloques*/
+.header-nav-wrap {
+
+    display: inline-block;
+}
+
+/*Ingreo de otra clase y que busque la etiqueta ul*/
+.header-nav-wrap ul {
+
+    display: inline-block;
+
+    list-style: none;
+
+    margin-left: 0;
+
+    margin-top: 18px;
+}
+
+/*Uso de una clase la cual me busque las etiquetas li*/
+.header-nav-wrap li {
+
+    display: inline-block;
+
+    padding: 0;
+}
+
+.header-nav-wrap li a {
+
+
+    display: block;
+
+
+    line-height: calc(78px-(18px*2));
+}
+
+/*Todo el contenido de la clase header main nav va a cambiar su letra y su tamaño*/
+.header-main-nav {
+    font-family: "Silkscreen", sans-serif;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 0 4px;
+
+    z-index: 2;
+    position: static;
+}
+
+.header-main-nav li {
+    margin: 0 2rem;
+}
+
+.header-main-nav a {
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+/*Se creara una subclase para el hearder-main-nav*/
+.header-main-nav a:hover,
+.header-main-nav a:focus,
+.header-main-nav a:active {
+    color: rgb(204, 255, 0);
+}
+
+.header-main-nav .current a {
+    color: white;
+}
+
+.header-social {
+
+    font-size: 2rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+.header-social li {
+    margin-right: 1rem;
+}
+
+.header-social li:last-child {
+    margin-right: 0;
+}
+
+.header-social li a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.header-social li a:hover,
+.header-social li a:focus,
+.header-social li a:active {
+    color: rgb(204, 255, 0);
 }
