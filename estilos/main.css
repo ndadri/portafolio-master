@@ -266,3 +266,849 @@ h6,
 .header-social li a:active {
     color: rgb(204, 255, 0);
 }
+/*COSOCSOCOSCOSOCOSCOOSCOSOC*/
+
+/*----------------------------------------------------------------------------------------
+# menu trigger
+-----------------------------------------------------------------------------------------*/
+.header-menu-toggle {
+    display: none;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    font-family: "Lora", serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: rgba(183, 255, 0, 0.5);
+    transition: all .3s;
+    position: absolute;
+    right: 32px;
+    top: 18px;
+}
+
+/* Color al pasar el mouse o enfocar el menú */
+.header-menu-toggle:hover,
+.header-menu-toggle:focus {
+    color: #ffffff;
+}
+
+/*Vamos a crear el span */
+.header-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: #ffffff;
+    transition: all .5s;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    right: auto;
+    bottom: auto;
+}
+
+/* Antes y después del span, para crear las líneas del menú */
+.header-menu-toggle span::before,
+.header-menu-toggle span::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    transition: all .5s;
+}
+
+.header-menu-toggle span::before {
+    top: -9px;
+}
+
+.header-menu-toggle span::after {
+    bottom: -9px;
+}
+
+/* Cambios al hacer clic en el botón del menú */
+.header-menu-toggle.is-clicked span {
+    background-color: rgba(255, 255, 255, 0);
+    /* Hace la línea del medio invisible */
+    transition: all .1s;
+}
+
+/* Cambios en las líneas superior e inferior al hacer clic */
+.header-menu-toggle.is-clicked span::before,
+.header-menu-toggle.is-clicked span::after {
+    background-color: white;
+}
+
+.header-menu-toggle.is-clicked span::before {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.header-menu-toggle.is-clicked span::after {
+    bottom: 0;
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+/*-----------------------------------------------------------------
+* responsive
+* header
+--------------------------------------------------------------------*/
+@media screen and (max-width:1200px) {
+    .header-main-nav {
+        font-size: 12px;
+        /* Reduce el tamaño de la fuente del menú */
+    }
+
+    .header-main-nav li {
+        margin: 0 1.4rem;
+    }
+
+}
+
+@media screen and (max-width:1000px) {
+    .s-header {
+        text-align: right;
+        /* Alinea el texto a la derecha */
+    }
+
+    .header-nav-wrap {
+        margin-right: 36px;
+        /* Margen a la derecha */
+    }
+
+    .header-nav-wrap .header-social {
+        display: none;
+    }
+}
+
+/* Estilos para pantallas menores a 800px */
+@media screen and (max-width:800px) {
+    .s-header {
+        background-color: #050505;
+        position: fixed;
+        top: 0;
+    }
+
+    /*Modifica el ancho y la altura de la imagen*/ 
+    .header-logo img {
+        width: 128px;
+        height: 30px;
+    }
+
+    .header-nav-wrap {
+        display: none;
+        text-align: left;
+        height: auto;
+        width: 100%;
+        background-color: #050505;
+        padding: 120px 44px 64px;
+
+    }
+
+    .header-nav-wrap .header-main-nav {
+        display: block;
+        padding-left: 0;
+        height: auto;
+        margin: 0 0 4rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-nav-wrap .header-main-nav li {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-nav-wrap .header-main-nav li a {
+        padding: 18px 0;
+        line-height: 20px;
+    }
+
+    .header-nav-wrap .header-social {
+        display: block;
+        position: static;
+
+    }
+
+    .header-nav-wrap .header-social li {
+        font-size: 1.8rem;
+        margin-right: 1.6rem;
+    }
+
+    .header-nav-wrap .header-social li a {
+        line-height: 36px;
+    }
+
+    /* Mostrar botón de menú */
+    .header-menu-toggle {
+        display: block;
+    }
+
+}
+
+/* Ajuste para pantallas menores a 600px */
+@media screen and (max-width:600px) {
+    .header-logo {
+        left: 35px;
+    }
+
+}
+
+/*--------------------------------------------------------------------------------------------
+  * hacer que el menu sea visible en una pantalla larga
+---------------------------------------------------------------------------------------------*/
+@media only screen and (min-width:801px) {
+    .header-nav-wrap {
+        display: block !important;
+    }
+}
+
+/* ===================================================================
+ * # intro
+ *
+ * ------------------------------------------------------------------- */
+
+/* Sección de introducción */
+.s-intro {
+    width: 100%;
+    height: 100vh;
+    min-height: 792px;
+    background-color: #050505;
+}
+
+/* Contenido de la introducción */
+.intro-content {
+    height: 100%;
+    max-width: 1140px;
+    padding-top: 20vh;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Imagen de la introducción */
+.intro-pic {
+    background-color: #02182c;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url(../img/hero-pic.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+}
+
+/* Capa oscura sobre la imagen */
+.intro-pic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: .2;
+}
+
+/* Patrón de fondo de la introducción */
+.intro-grid {
+    background-image: url(../img/pattern-dot-grid.svg);
+    background-size: 24px 24px;
+    opacity: .15;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+}
+
+/* Estilos para el contenedor de texto de introducción */
+.intro-text {
+    -webkit-transform: translate3d(0, -3.6rem, 0);
+    transform: translate3d(0, -3.6rem, 0);
+    position: static;
+    z-index: 1;
+}
+
+/* Estilos para el subtítulo (h3) en la introducción */
+.intro-text h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.333;
+    color: #cf1767;
+    margin-top: 0;
+}
+
+/* Estilos para el título principal (h1) en la introducción */
+.intro-text h1 {
+    font-size: 7.8rem;
+    font-weight: 500;
+    line-height: 1.179;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* Estilos para el texto de desplazamiento en la introducción */
+.intro-scroll {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 24px;
+    z-index: 1;
+}
+
+/* Estilos para los enlaces en el texto de desplazamiento */
+.intro-scroll a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.3);
+    position: relative;
+    padding-right: 8.8rem;
+}
+
+/* Pseudo-elemento para subrayar el enlace */
+.intro-scroll a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    width: 72px;
+    background-color: #cf1767;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * intro
+ * ------------------------------------------------------------------- */
+
+/* Ajustes para pantallas menores a 1400px */
+@media screen and (max-width:1400px) {
+    .intro-text h3 {
+        font-size: 2.2rem;
+    }
+
+    .intro-text h1 {
+        font-size: 7.2rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 1200px */
+@media screen and (max-width:1200px) {
+    .intro-content {
+        max-width: 1000px;
+    }
+
+    .intro-text h3 {
+        font-size: 2rem;
+    }
+
+    .intro-text h1 {
+        font-size: 7rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 1024px */
+@media screen and (max-width:1024px) {
+    .s-intro {
+        max-height: 800px;
+    }
+
+    .intro-text h1 {
+        font-size: 6.2rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 900px */
+@media screen and (max-width:900px) {
+    .intro-text h1 {
+        font-size: 6rem;
+    }
+
+    .intro-text br {
+        display: none;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 800px */
+@media screen and (max-width:800px) {
+    .intro-content {
+        width: 88%;
+        padding-top: 8rem;
+    }
+
+    .intro-pic {
+        top: 12%;
+        left: 40%;
+    }
+
+    .intro-pic::before {
+        opacity: .4;
+    }
+
+    .intro-grid {
+        top: 20%;
+        opacity: .1;
+    }
+
+    .intro-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text h1 {
+        font-size: 5.6rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 700px */
+@media screen and (max-width:700px) {
+    .intro-text h1 {
+        font-size: 5rem;
+    }
+
+    .intro-pic {
+        left: 30%;
+    }
+
+    .intro-grid {
+        left: 15%;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 600px */
+@media screen and (max-width:600px) {
+    .s-intro {
+        max-height: none;
+    }
+
+    .intro-content {
+        width: auto;
+    }
+
+    .intro-pic {
+        left: 20%;
+    }
+
+    .intro-grid {
+        left: 10%;
+    }
+
+    .intro-text {
+        -webkit-transform: translate3d(0, -4.8rem, 0);
+        transform: translate3d(0, -4.8rem, 0);
+    }
+
+    .intro-text h1 {
+        font-size: 4.8rem;
+    }
+
+    .intro-scroll {
+        font-size: 1.1rem;
+        left: 30px;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 400px */
+@media screen and (max-width:400px) {
+    .s-intro {
+        min-height: 656px;
+    }
+
+    .intro-text h1 {
+        font-size: 4.5rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 350px */
+@media screen and (max-width:350px) {
+    .intro-text h1 {
+        font-size: 4.2rem;
+    }
+
+}
+
+/* ===================================================================
+ * # about me
+ *
+ * ------------------------------------------------------------------- */
+
+/* Sección de "Sobre mí" */
+.s-about {
+    padding-top: 19.2rem;
+    padding-bottom: 16.8rem;
+    background-color: #ffffff;
+}
+
+/* Contenedor de la sección */
+.s-about .row {
+    max-width: 1140px;
+}
+
+.s-about>[class*="about-"] {
+    margin-bottom: 15.2rem;
+}
+
+.s-about>[class*="about-"]:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilos para el texto de "Sobre mí" */
+.about-me__text {
+    -webkit-columns: 2 360px;
+    -moz-columns: 2 360px;
+    columns: 2 360px;
+    column-gap: 64px;
+}
+
+/* Estilos para los botones de "Sobre mí" */
+.about-me__buttons {
+    margin-top: 4.8rem;
+}
+
+.about-me__buttons .column:first-child {
+    padding-right: 32px;
+}
+
+.about-me__buttons .column:last-child {
+    padding-left: 32px;
+}
+
+/* -------------------------------------------------------------------
+   * ## timeline
+   * ------------------------------------------------------------------- */
+
+/* Estilos para la línea de tiempo */
+.about-experience__timeline {
+    margin-top: 1.6rem;
+}
+
+.about-experience__timeline .column:first-child {
+    padding-right: 40px;
+}
+
+.about-experience__timeline .column:last-child {
+    padding-left: 40px;
+}
+
+/* Contenedor */
+.timeline {
+    padding-top: 4.8rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Línea horizontal en la parte superior de timeline */
+.timeline::after {
+    content: "";
+    display: block;
+    width: 5.6rem;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+    position: absolute;
+    left: 1px;
+    top: 0;
+}
+
+/* Estilos para el icono de timeline*/
+.timeline__icon-wrap {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: -2.2rem;
+    left: 5.6rem;
+}
+
+.timeline__icon {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+/* Estilos para el icono de trabajo */
+.timeline__icon--work {
+    background-image: url(../img/icons/icon-briefcase.svg);
+}
+
+/* Estilos para el icono de educación */
+.timeline__icon--education {
+    background-image: url(../img/icons/icon-education.svg);
+}
+
+/* Estilos para cada bloque de timeline*/
+.timeline__block {
+    position: relative;
+    padding-left: 5.6rem;
+    padding-bottom: .8rem;
+    margin-top: 2.8rem;
+    min-height: 35.6rem;
+}
+
+.timeline .timeline__block:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__bullet {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 4.8rem;
+    background-color: #000000;
+    position: absolute;
+    left: -1px;
+    top: 8px;
+}
+
+/* Estilos para el encabezado de cada bloque de timeline */
+.timeline__header {
+    margin-bottom: 3.2rem;
+}
+
+/* Estilos para el título en el encabezado */
+.timeline_header .timeline_timeframe,
+.timeline__header h5 {
+    font-family: "Roboto", sans-serif;
+}
+
+/* Estilos para el texto */
+.timeline_header .timeline_timeframe {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.714;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-bottom: .8rem;
+    color: #000000;
+}
+
+/* Estilos para el título del encabezado */
+.timeline__header h3 {
+    margin-bottom: 0;
+}
+
+/* Estilos para el subtítulo del encabezado */
+.timeline__header h5 {
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1.333;
+    margin-top: 0;
+}
+
+/* -------------------------------------------------------------------
+   * responsive:
+   * about
+   * ------------------------------------------------------------------- */
+
+/* Ajustes para pantallas menores a 1200px */
+@media screen and (max-width:1200px) {
+    .s-about {
+        padding-top: 17.2rem;
+        padding-bottom: 15.6rem;
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 30px;
+    }
+
+    .about-experience__timeline .column::last-child {
+        padding-left: 30px;
+    }
+
+    .timeline::after {
+        width: 4.4rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 4.4rem;
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem;
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 1024px */
+@media screen and (max-width:1024px) {
+    .about-me__text {
+        column-gap: 40px;
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 20px;
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 20px;
+    }
+
+    .about-experience__timeline .column:first-child {
+        padding-right: 16px;
+    }
+
+    .about-experience__timeline .column:last-child {
+        padding-left: 16px;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 900px */
+@media screen and (max-width:900px) {
+    .s-about .row {
+        max-width: 700px;
+    }
+
+    .about-me__buttons .column:first-child {
+        padding-right: 16px;
+    }
+
+    .about-me__buttons .column:last-child {
+        padding-left: 16px;
+    }
+
+    .about-experience__timeline .column {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .about-experience__timeline .column:first-child {
+        margin-bottom: 9.6rem;
+    }
+
+    .timeline::after {
+        width: 5.6rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 5.6rem;
+    }
+
+    .timeline__block {
+        min-height: 0;
+        padding-left: 5.6rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 800px */
+@media screen and (max-width:800px) {
+    .s-about {
+        padding-top: 16rem;
+    }
+
+    .s-about .row {
+        max-width: 600px;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 600px */
+@media screen and (max-width:600px) {
+
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 10px;
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 10px;
+    }
+
+    .timeline::after {
+        width: 4.4rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 4.4rem;
+    }
+
+    .timeline__block {
+        padding-left: 4.4rem;
+    }
+
+    .timeline__header h5 {
+        font-size: 1.8rem;
+    }
+
+}
+
+/* Ajustes para pantallas menores a 400px */
+@media screen and (max-width:400px) {
+    .s-about>[class*="about-"] {
+        margin-bottom: 14rem;
+    }
+
+    .about-me__buttons .column:first-child,
+    .about-experience__timeline .column:first-child {
+        padding-right: 0;
+    }
+
+    .about-me__buttons .column:last-child,
+    .about-experience__timeline .column:last-child {
+        padding-left: 0;
+    }
+
+    .timeline::after {
+        width: 2.8rem;
+    }
+
+    .timeline__icon-wrap {
+        left: 2.8rem;
+    }
+
+    .timeline__block {
+        padding-left: 2.8rem;
+    }
+
+}
